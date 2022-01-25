@@ -33,6 +33,9 @@
 " Sets how many lines of history VIM has to remember
 set history=500
 
+" Sets number
+set number
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -69,7 +72,7 @@ source $VIMRUNTIME/menu.vim
 set wildmenu
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set wildignore=*.o,*~,*.pyc,*.jpg,*.png,*.JPEG,*.PNG,*.mp4
 if has("win16") || has("win32")
     set wildignore+=.git\*,.hg\*,.svn\*
 else
@@ -232,6 +235,9 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
+
+nmap <S-Tab> :tabprev<Return>
+nmap <Tab> :tabnext<Return>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
