@@ -19,21 +19,32 @@ catch
 endtry' > ~/.vimrc
 
 echo "Install powerlevel10k"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+if [ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]
+then
+    echo "Powerlevel10k is existed!. skip!"
+else
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    echo 'source ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+fi
 
-echo "Install zsh-autosuggestion"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+if [ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]
+then
+    echo "zsh-autosuggestions is existed!. skip!"
+else
+    echo "Install zsh-autosuggestion"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
 
-echo "Install zsh-syntax-highlight"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+if [ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]
+then
+    echo "zsh-syntax-highlight is existed!. skip!"
+else
+    echo "Install zsh-syntax-highlight"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
 
-echo "Install tqm"
-mkdir -p ~/.tmux/plugins/
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-echo "Copy tmux config"
-cp ~/.vim_runtime/.tmux.conf ~/
+git clone https://github.com/gpakosz/.tmux.git oh-my-tmux
+ln -s -f oh-my-tmux/.tmux.conf ~/.tmux.conf
+cp oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
