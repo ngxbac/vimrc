@@ -44,7 +44,8 @@ else
 fi
 
 git clone https://github.com/gpakosz/.tmux.git oh-my-tmux
-ln -s -f oh-my-tmux/.tmux.conf ~/.tmux.conf
-cp oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local
+cd
+ln -s .vim_runtime/oh-my-tmux/.tmux.conf
+cp .vim_runtime/oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
