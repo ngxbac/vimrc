@@ -43,8 +43,14 @@ else
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
-git clone https://github.com/gpakosz/.tmux.git oh-my-tmux
-ln -s -f oh-my-tmux/.tmux.conf ~/.tmux.conf
-cp oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local
+# if [ -d oh-my-tmux ]
+# then
+#     echo "oh-my-tmux is existed!. skip!"
+# else
+#     git clone https://github.com/gpakosz/.tmux.git oh-my-tmux
+# fi
+
+ln -s -f ~/.vim_runtime/.tmux.conf ~/.tmux.conf
+cp ~/.vim_runtime/.tmux.conf.local ~/.tmux.conf.local
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"

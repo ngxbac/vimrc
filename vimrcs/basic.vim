@@ -33,6 +33,8 @@
 " Sets how many lines of history VIM has to remember
 set history=500
 
+set mouse=a
+
 " Sets number
 set number
 

@@ -63,6 +63,7 @@ vim-indent-guides https://github.com/nathanaelkane/vim-indent-guides
 mru.vim https://github.com/vim-scripts/mru.vim
 editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 dracula https://github.com/dracula/vim
+vim-tmux-clipboard https://github.com/roxma/vim-tmux-clipboard
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"

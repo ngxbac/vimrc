@@ -170,8 +170,11 @@ let g:ale_lint_on_enter = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_enabled=0
+let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+hi clear SignColumn
+let g:gitgutter_sign_added    = '┃'
+let g:gitgutter_sign_modified = '┋'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
